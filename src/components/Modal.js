@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { ProductConsumer } from '../context';
+import { ProductConsumer } from '../Context';
 import { ButtonContainer } from './Button';
 import { Link } from 'react-router-dom';
 
-class Modal extends Component {
+export default class Modal extends Component {
   render() {
     return (
       <ProductConsumer>
@@ -26,7 +26,7 @@ class Modal extends Component {
                       <img src={img} alt='product-img' className='img-fluid' />
                       <h5>{title}</h5>
                       <h5 className='text-muted'>price : $ {price}</h5>
-                      <Link to='/store'>
+                      <Link to='/'>
                         <ButtonContainer onClick={() => closeModal()}>
                           store
                         </ButtonContainer>
@@ -62,5 +62,3 @@ const ModalContainer = styled.div`
     background: var(--mainWhite);
   }
 `;
-
-export default Modal;
